@@ -9,3 +9,6 @@ In addition to the features mentioned above, I will also be paying close attenti
 To help me focus on other areas of the project, I will be utilizing **Material-UI** for styling. **MUI** is a popular library of pre-designed React components that allows me to easily implement modern, responsive designs without spending too much time on custom styling.
 
 Overall, my goal is to create a top-quality Netflix clone that not only looks great and offers a wide range of features, but also delivers a fast and seamless experience for users.
+
+Technologies used:
+NextJs, React Query, ContextAPI ,MUI.
