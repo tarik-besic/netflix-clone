@@ -11,4 +11,4 @@ To help me focus on other areas of the project, I will be utilizing **Material-U
 Overall, my goal is to create a top-quality Netflix clone that not only looks great and offers a wide range of features, but also delivers a fast and seamless experience for users.
 
 Technologies used:
-NextJs, React Query, ContextAPI ,MUI.
+NextJs, TypeScript , React Query, ContextAPI ,MUI.
