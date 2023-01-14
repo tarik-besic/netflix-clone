@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+  "extends": ["next/core-web-vitals", "airbnb-base"],
   "env": {
     "browser": true,
     "es6": true,
@@ -14,9 +14,7 @@
   "rules": {
     "react/prop-types": "off",
     "react/display-name": "off",
-    "react/no-unescaped-entities": "off",
-    "no-console": "off",
-    "no-unused-vars": "off"
+    "quotes": ["error", "double"]
   },
   "settings": {
     "react": {
@@ -24,4 +22,3 @@
     }
   }
 }
-
