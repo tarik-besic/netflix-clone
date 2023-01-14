@@ -20,30 +20,28 @@ const InputField = (props: Props) => {
 
   return (
     <div
-      className={`relative flex pt-4 pb-2 px-4 flex-col outline-none bg-neutral-700 rounded-sm ${className} ${
+      className={`h-[50px] relative flex flex-col outline-none bg-neutral-700 rounded-t ${className} ${
         !transformInput ? "cursor-pointer" : ""
       }"}`}
     >
+      <input
+        ref={inputRef}
+        onFocus={() => setActive(true)}
+        className="h-[50px] pt-4 pb-0 px-5 bg-transparent border-transparent focus:border-transparent focus:outline-none"
+        {...field}
+        onBlur={() => setActive(false)}
+      />
       <label
         onClick={(e) => {
           setActive(true);
           inputRef.current!.focus();
         }}
-        className={`absolute cursor-pointer text-neutral-500 transition-all duration-100 ease-in-out ${
-          transformInput ? "scale-75 -translate-y-2 transition-[left] duration-0 left-0" : ""
+        className={`absolute left-5 top-1/2 -translate-y-1/2 cursor-pointer text-[#8c8c8c] transition-all duration-100 ease-in-out ${
+          transformInput ? "text-[11px] translate-y-0 top-[7px]" : "text-base"
         }`}
       >
         {label}
       </label>
-      <input
-        ref={inputRef}
-        onFocus={() => setActive(true)}
-        className={`h-10 bg-transparent border-transparent focus:border-transparent focus:outline-none
-        ${transformInput ? "h-fit" : ""}
-        `}
-        {...field}
-        onBlur={() => setActive(false)}
-      />
     </div>
   );
 };
