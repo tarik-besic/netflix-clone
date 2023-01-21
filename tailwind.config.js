@@ -4,7 +4,20 @@ module.exports = {
     "./components/**/*.{html,ts,tsx,js,jsx}",
   ],
   theme: {
-    "text-input": "#8c8c8c",
+    extend: {
+      fontSize: {
+        sm: "13px",
+      },
+      margin: {
+        34: "132px",
+      },
+      colors: {
+        gray: "#8c8c8c",
+        "gray-lighter": "#b8b8b8",
+        "gray-standard": "#8c8c8c",
+        "gray-draker": "#737373",
+      },
+    },
   },
   // ...
 };
