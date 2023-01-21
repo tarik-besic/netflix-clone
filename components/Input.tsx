@@ -1,12 +1,11 @@
-import { FieldInputProps, useField } from "formik";
+import { useField } from "formik";
 import { useRef, useState } from "react";
 
-// interface for inputFiled that extends default props used in Formik forms
-interface Props extends FieldInputProps<string> {
-  label: string;
+interface Props {
   name: string;
   type: string;
-  className: string;
+  className?: string;
+  label: string;
 }
 
 const InputField = (props: Props) => {
@@ -22,12 +21,15 @@ const InputField = (props: Props) => {
   // boolean value for floating label
   const transformInput = (!active && field.value) || active;
 
+  const displayButtonLabel = field.value.length > 0;
   return (
     <div
       className={`h-[50px] cursor-text relative flex flex-col outline-none rounded-t rounded-b ${className} ${
         !transformInput ? "bg-[#454545]" : ""
       } ${active ? "bg-[#454545]" : "bg-[#333333]"}`}
-      onClick={() => inputRef.current!.focus()}
+      onClick={() => {
+        inputRef.current!.focus();
+      }}
     >
       <div className="flex items-center">
         <input
@@ -38,12 +40,12 @@ const InputField = (props: Props) => {
           type={showPassword ? "text" : props.type}
           onBlur={() => setActive(false)}
         />
-        {props.type === "password" && (
+        {props.type === "password" && displayButtonLabel && (
           <div
             className="text-[#8c8c8c] mr-3 cursor-pointer"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "SHOW" : "HIDE"}
+            {field.value.length > 0 && (showPassword ? "SHOW" : "HIDE")}
           </div>
         )}
       </div>
