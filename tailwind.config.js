@@ -16,6 +16,7 @@ module.exports = {
         "gray-lighter": "#b8b8b8",
         "gray-standard": "#8c8c8c",
         "gray-draker": "#737373",
+        orange: "#E87C03",
       },
     },
   },
