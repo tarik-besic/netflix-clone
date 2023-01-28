@@ -6,11 +6,12 @@ interface Props {
   type: string;
   className?: string;
   label: string;
+  error?: boolean;
 }
 
 const InputField = (props: Props) => {
   // props
-  const { label, className, name } = props;
+  const { label, className, name, error } = props;
   const inputRef = useRef<HTMLInputElement>(null);
   const [field] = useField(name);
 
@@ -26,7 +27,8 @@ const InputField = (props: Props) => {
     <div
       className={`h-[50px] cursor-text relative flex flex-col outline-none rounded-t rounded-b ${className} ${
         !transformInput ? "bg-[#454545]" : ""
-      } ${active ? "bg-[#454545]" : "bg-[#333333]"}`}
+      } ${active ? "bg-[#454545]" : "bg-[#333333]"}
+      `}
       onClick={() => {
         inputRef.current!.focus();
       }}
@@ -36,7 +38,7 @@ const InputField = (props: Props) => {
           {...field}
           ref={inputRef}
           onFocus={() => setActive(true)}
-          className="text-white h-[50px] pt-4 pb-0 px-5 bg-transparent border-transparent focus:border-transparent focus:outline-none"
+          className="text-white h-[50px] pt-4 pb-0 px-5 bg-transparent border-transparent focus:border-transparent focus:outline-none w-full"
           type={showPassword ? "text" : props.type}
           onBlur={() => setActive(false)}
         />
